@@ -28,10 +28,11 @@ export default function Footer() {
                 </div>
                 <div className='footerDiv3'>
                     <h3 className='footerDiv1H3'>Suivez-nous</h3>
-                    <FontAwesomeIcon className='footerDiv3I fb' icon={faFacebookF} />
-                    <FontAwesomeIcon className='footerDiv3I' icon={faTwitter} />
-                    <FontAwesomeIcon className='footerDiv3I' icon={faInstagram} />
-                    <FontAwesomeIcon className='footerDiv3I' icon={faGithub} />
+                    <Link className='link' to="https://www.facebook.com/"><FontAwesomeIcon className='footerDiv3I fb' icon={faFacebookF} /></Link>
+                    <Link className='link' to="https://x.com/"><FontAwesomeIcon className='footerDiv3I' icon={faTwitter} /></Link>
+                    <Link className='link' to="https://www.instagram.com/"><FontAwesomeIcon className='footerDiv3I' icon={faInstagram} /></Link>
+                    <Link className='link' to="https://github.com/ArthurVRoost"><FontAwesomeIcon className='footerDiv3I' icon={faGithub} /></Link>
+                    
                 </div>
                 
     
