@@ -19,13 +19,16 @@ export default function Footer() {
                 </div>
                 <div className='footerDiv2'>
                     <h3 className='footerDiv1H3'>Liens utiles</h3>
-                    <Link className='link'><p className='footerDiv2P'><span className='footerPoint'>&bull;</span>Home</p></Link>
-                    <Link className='link'><p className='footerDiv2P'><span className='footerPoint'>&bull;</span>About</p></Link>
-                    <Link className='link'><p className='footerDiv2P'><span className='footerPoint'>&bull;</span>Contact</p></Link>
+                    <div className='footerDiv2Div'>
+                        <Link className='link' to="/"><p className='footerDiv2P'><span className='footerPoint'>&bull;</span>Home</p></Link>
+                        <Link className='link' to="/about"><p className='footerDiv2P'><span className='footerPoint'>&bull;</span>About</p></Link>
+                        <Link className='link' to="/contact"><p className='footerDiv2P'><span className='footerPoint'>&bull;</span>Contact</p></Link>
+                    </div>
+                    
                 </div>
                 <div className='footerDiv3'>
                     <h3 className='footerDiv1H3'>Suivez-nous</h3>
-                    <FontAwesomeIcon className='footerDiv3I' icon={faFacebookF} />
+                    <FontAwesomeIcon className='footerDiv3I fb' icon={faFacebookF} />
                     <FontAwesomeIcon className='footerDiv3I' icon={faTwitter} />
                     <FontAwesomeIcon className='footerDiv3I' icon={faInstagram} />
                     <FontAwesomeIcon className='footerDiv3I' icon={faGithub} />
