@@ -74,7 +74,7 @@ export default function Details() {
       {meal.strYoutube && (
         <div className="video-section">
           <h2>Vidéo</h2>
-          <a href={meal.strYoutube} target="_blank" rel="noopener noreferrer">
+          <a href={meal.strYoutube} target="_blank" >
             Voir la vidéo sur YouTube
           </a>
         </div>
