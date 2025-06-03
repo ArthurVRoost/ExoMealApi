@@ -15,8 +15,8 @@ export default function Pasta() {
     useEffect(() => {
         axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta')
             .then(response => {
-                setMeals(response.data.meals || []);
-                setFilteredMeals(response.data.meals || []);
+                setMeals(response.data.meals);
+                setFilteredMeals(response.data.meals);
                 setLoading(false);
             })
             .catch(err => {
