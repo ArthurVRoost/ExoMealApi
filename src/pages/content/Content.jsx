@@ -27,23 +27,23 @@ export default function Content() {
     return(
         <>
         <Nav/>
-            <div className="content">
-                <h1>Plats de fruits de mer</h1>
-                <div className="meals-grid">
+            <div className="divContent">
+                <h1 className='contentH1'>Plats de fruits de mer</h1>
+                <div className="contentDiv1">
                     {meals.map((meal) => (
-                    <div key={meal.idMeal} className="meal-card">
-                        <img src={meal.strMealThumb} alt={meal.strMeal} className="meal-image"/>
-                        <div className="meal-info">
-                        <h3>{meal.strMeal}</h3>
+                    <div key={meal.idMeal} className="cardContent">
+                        <img src={meal.strMealThumb} alt={meal.strMeal} className="imgContent"/>
+                        <div className="contentDiv2">
+                        <h3 className='contentH3'>{meal.strMeal}</h3>
                         <Link to={`/recipe/${meal.idMeal}`}>
-                            <button className="details-btn">Voir la recette</button>
+                            <button className="btnContent">Voir la recette</button>
                         </Link>
                         </div>
                     </div>
                     ))}
                 </div>
             </div>
-           <Footer/>
+           <Footer className='footerContent'/>
         </>
     )
 }

@@ -1,0 +1,72 @@
+.contentDiv1{   
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+}
+.imgContent{
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+}
+.contentH1{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.cardContent{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.cardContent img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.contentDiv2{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #666566);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.8s;
+}
+
+.contentDiv2 h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+
+.cardContent:hover img{
+    transform: scale(1.1);
+}
+
+.cardContent:hover .contentDiv2{
+    height: 100%;
+}
+.btnContent{
+    cursor: pointer;
+    border-radius: 15px;
+    outline: none;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+}
+.btnContent:hover{
+    background-color: black;
+    color: white;
+}

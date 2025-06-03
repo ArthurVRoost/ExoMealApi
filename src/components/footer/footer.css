@@ -3,6 +3,8 @@
     display: flex;
     margin-left: 5%;
     margin-right: 5%;
+    margin-top: 3%;
+   
 }
 .footerDiv4{
     font-family: "Rubik";
@@ -55,4 +57,19 @@
 }
 .fb{
     padding: 10px 13px;
+}
+@media (max-width:768px) {
+    .divFooter{
+        flex-direction: column;
+        margin-left: 10%;
+    }
+    .footerDiv1{
+        width: 90%;
+    }
+    .footerDiv2{
+        width: 90%;
+    }
+    .footerDiv3{
+        width: 90%;
+    }
 }

@@ -24,7 +24,6 @@ export default function Details() {
   if (error) return <div>{error}</div>;
   if (!meal) return <div>Recette non trouvée</div>;
 
-  // Récupérer les ingrédients
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
     const ingredient = meal[`strIngredient${i}`];
