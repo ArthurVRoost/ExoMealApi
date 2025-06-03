@@ -11,6 +11,10 @@
     left: 20Px;
     top: 15px;
 }
+.btnBack:hover{
+    background-color: black;
+    color: white;
+}
 .detailsDiv1{
     text-align: center;
 }
