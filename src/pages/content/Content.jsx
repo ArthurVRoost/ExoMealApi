@@ -47,13 +47,7 @@ export default function Content() {
                 
                 {/* Input de recherche */}
                 <div className="searchContainer">
-                    <input
-                        type="text"
-                        placeholder="Rechercher un plat..."
-                        value={searchTerm}
-                        onChange={handleSearchChange}
-                        className="searchInput"
-                    />
+                    <input type="text" placeholder="Rechercher un plat..." value={searchTerm} onChange={handleSearchChange} className="searchInput"/>
                 </div>
 
                 <div className="contentDiv1">
