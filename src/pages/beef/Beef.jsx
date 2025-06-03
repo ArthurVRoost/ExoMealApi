@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Footer from '../../components/footer/Footer'
 import Nav from '../../components/nav/Nav'
-import './content.css'
+import './beef.css'
 
-export default function Content() {
+export default function Beef() {
     const [meals, setMeals] = useState([]);
     const [filteredMeals, setFilteredMeals] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -13,7 +13,7 @@ export default function Content() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
+        axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef')
             .then(response => {
                 setMeals(response.data.meals);
                 setFilteredMeals(response.data.meals);
@@ -43,9 +43,9 @@ export default function Content() {
         <>
             <Nav/>
             <div className="divContent">
-                <h1 className='contentH1'>Plats de fruits de mer</h1>
+                <h1 className='contentH1'>Plats de Beef</h1>
                 
-                {/* Input de recherche */}
+                
                 <div className="searchContainer">
                     <input
                         type="text"
@@ -71,7 +71,7 @@ export default function Content() {
                         ))
                     ) : (
                         <div className="noResults">
-                            <p>{searchTerm ? `Aucun plat trouvé pour "${searchTerm}"` : 'Aucun plat de fruits de mer trouvé'}</p>
+                            <p>Aucun plat trouvé pour "{searchTerm}"</p>
                         </div>
                     )}
                 </div>

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Footer from '../../components/footer/Footer'
 import Nav from '../../components/nav/Nav'
-import './content.css'
+import './pasta.css'
 
-export default function Content() {
+export default function Pasta() {
     const [meals, setMeals] = useState([]);
     const [filteredMeals, setFilteredMeals] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -13,10 +13,10 @@ export default function Content() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
+        axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta')
             .then(response => {
-                setMeals(response.data.meals);
-                setFilteredMeals(response.data.meals);
+                setMeals(response.data.meals || []);
+                setFilteredMeals(response.data.meals || []);
                 setLoading(false);
             })
             .catch(err => {
@@ -38,12 +38,12 @@ export default function Content() {
 
     if (loading) return <div>Chargement...</div>;
     if (error) return <div>{error}</div>;
-
+    
     return(
         <>
             <Nav/>
             <div className="divContent">
-                <h1 className='contentH1'>Plats de fruits de mer</h1>
+                <h1 className='contentH1'>Plats de Pâtes</h1>
                 
                 {/* Input de recherche */}
                 <div className="searchContainer">
@@ -57,7 +57,7 @@ export default function Content() {
                 </div>
 
                 <div className="contentDiv1">
-                    {filteredMeals.length > 0 ? (
+                    {filteredMeals && filteredMeals.length > 0 ? (
                         filteredMeals.map((meal) => (
                             <div key={meal.idMeal} className="cardContent">
                                 <img src={meal.strMealThumb} alt={meal.strMeal} className="imgContent"/>
@@ -71,7 +71,7 @@ export default function Content() {
                         ))
                     ) : (
                         <div className="noResults">
-                            <p>{searchTerm ? `Aucun plat trouvé pour "${searchTerm}"` : 'Aucun plat de fruits de mer trouvé'}</p>
+                            <p>{searchTerm ? `Aucun plat trouvé pour "${searchTerm}"` : 'Aucun plat de pâtes trouvé'}</p>
                         </div>
                     )}
                 </div>
