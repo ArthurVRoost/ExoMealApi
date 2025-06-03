@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     gap: 100px;
     justify-content: center;
+    font-family: "Rubik";
 }
 .imgContent{
     width: 300px;
@@ -69,4 +70,8 @@
 .btnContent:hover{
     background-color: black;
     color: white;
+}
+.contentH1{
+    font-family: "Rubik";
+    font-weight: 100;
 }

@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
-
+import './details.css'
+import Footer from '../../components/footer/Footer';
+import Nav from '../../components/nav/Nav';
 export default function Details() {
   const [meal, setMeal] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -34,50 +36,46 @@ export default function Details() {
   }
 
   return (
-    <div className="recipe-details">
+    <>
+    <Nav/>
+    <div className="divDetails">
       <Link to="/">
-        <button className="back-btn">
-          Retour à l'accueil
-        </button>
+        <button className="btnBack">&larr;</button>
       </Link>
       
-      <div className="recipe-header">
-        <h1>{meal.strMeal}</h1>
-        <img 
-          src={meal.strMealThumb} 
-          alt={meal.strMeal}
-          className="recipe-image"
-        />
+      <div className="detailsDiv1">
+        <h1 className="detailsDiv1H1">{meal.strMeal}</h1>
+        <img src={meal.strMealThumb} alt={meal.strMeal} className="detailsDiv1Img"/>
       </div>
 
-      <div className="recipe-info">
-        <p><strong>Catégorie:</strong> {meal.strCategory}</p>
-        <p><strong>Origine:</strong> {meal.strArea}</p>
-        {meal.strTags && <p><strong>Tags:</strong> {meal.strTags}</p>}
+      <div className="detailsDiv2">
+        <p className="detailsDiv2P"><b className='detailsB'>Catégorie:</b> {meal.strCategory}</p>
+        <p className="detailsDiv2P"><b className='detailsB'>Origine:</b> {meal.strArea}</p>
+        {meal.strTags && <p className="detailsDiv2P" ><b className='detailsB'>Tags:</b> {meal.strTags}</p>}
       </div>
 
-      <div className="ingredients-section">
-        <h2>Ingrédients</h2>
+      <div className="detailsDiv3">
+        <h2 className="detailsDiv3H2">Ingrédients</h2>
         <ul>
           {ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
+            <li className="detailsDiv3Li" key={index}>{ingredient}</li>
           ))}
         </ul>
       </div>
 
-      <div className="instructions-section">
-        <h2>Instructions</h2>
-        <p>{meal.strInstructions}</p>
+      <div className="detailsDiv4">
+        <h2 className="detailsDiv4H2">Instructions</h2>
+        <p className="detailsDiv4P">{meal.strInstructions}</p>
       </div>
 
       {meal.strYoutube && (
-        <div className="video-section">
-          <h2>Vidéo</h2>
-          <a href={meal.strYoutube} target="_blank" >
-            Voir la vidéo sur YouTube
-          </a>
+        <div className="detailsDiv5">
+          <h2 className="detailsDiv5H2">Vidéo</h2>
+          <a className="detailsDiv5A" href={meal.strYoutube} target="_blank" >Clique ici pour la vidéo YouTube</a>
         </div>
       )}
     </div>
+    <Footer/>
+    </>
   );
 }
