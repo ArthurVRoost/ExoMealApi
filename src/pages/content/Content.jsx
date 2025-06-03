@@ -42,10 +42,13 @@ export default function Content() {
     return(
         <>
             <Nav/>
+            <Link to="/">
+                 <button className="btnBack">&larr;</button>
+            </Link>
             <div className="divContent">
                 <h1 className='contentH1'>Plats de fruits de mer</h1>
                 
-                {/* Input de recherche */}
+                
                 <div className="searchContainer">
                     <input type="text" placeholder="Rechercher un plat..." value={searchTerm} onChange={handleSearchChange} className="searchInput"/>
                 </div>

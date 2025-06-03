@@ -42,6 +42,9 @@ export default function Beef() {
     return(
         <>
             <Nav/>
+            <Link to="/">
+                 <button className="btnBack">&larr;</button>
+            </Link>
             <div className="divContent">
                 <h1 className='contentH1'>Plats de Beef</h1>
                 
@@ -51,9 +54,12 @@ export default function Beef() {
                 </div>
 
                 <div className="contentDiv1">
+                    
                     {filteredMeals.length > 0 ? (
                         filteredMeals.map((meal) => (
+                            
                             <div key={meal.idMeal} className="cardContent">
+                                
                                 <img src={meal.strMealThumb} alt={meal.strMeal} className="imgContent"/>
                                 <div className="contentDiv2">
                                     <h3 className='contentH3'>{meal.strMeal}</h3>
